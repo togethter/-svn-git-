@@ -1,0 +1,35 @@
+
+cd /Users/lixueliang/Desktop/终端命令行/RAS 
+lixueliangdeMac-mini:RAS lixueliang$ openssl genrsa -out private.pem 512
+Generating RSA private key, 512 bit long modulus
+..............++++++++++++
+...................++++++++++++
+e is 65537 (0x10001)
+lixueliangdeMac-mini:RAS lixueliang$ cat private.pem
+-----BEGIN RSA PRIVATE KEY-----
+MIIBOgIBAAJBAMLvC08YbIU5dWpDTzOtS04gqhvFYykjJsHbQaRoUyKmwn7jc04O
+Yvi9fseLg7PjYBS72OKjWAyapv0s7GYTtCUCAwEAAQJAKiyTssoi+HPk/lePtCuD
+BmU0yItdF9JeGUT5n7teeTlgEa+cFePeLuIgm6UqtbiwKK4BnFMG0Q+fbfyTVKMg
+pQIhAPJNCYfrQc6wBJdCPoQmmqp4oI/JzrcSdaBXyqIOhaDrAiEAzfRvM4YwAY5/
+rfvjpES7fIN+rB86goj4AZ2jaJkfOy8CIGaC30ho6POYFqkj9q0UZBVBabTLzbA4
+mBlZazp66GA3AiEAlVKP/W9hBv/mGqLyXXtn49MC2JCbv2DHT4SXoZLDTgkCIGtE
+qfMUawOq64jKmgdnJIkUBqJeLqWQxJB0M32arfOs
+-----END RSA PRIVATE KEY-----
+lixueliangdeMac-mini:RAS lixueliang$ 
+
+openssl rsa -in private.pem -text -out private.txt
+
+
+
+// 生成私钥
+openssl genrsa -out private.pem 512
+// 一名文的方式输出私钥内容
+openssl rsa -in private.pem -text -out private.txt
+// 校验私钥文件
+openssl rsa -in private.pem -check
+// 从私钥里提取公钥
+openssl rsa -in private.pem -out public.pem -outform PEM -pubout
+// 以明文的方式输出公钥
+openssl rsa -in public.pem -out public.txt -pubin -pubout -text
+
+

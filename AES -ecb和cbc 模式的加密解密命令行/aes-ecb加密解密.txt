@@ -1,0 +1,40 @@
+====================== aes-ecb 加密====================
+
+AES ecb 模式的加密命令行
+
+命令行 加密 加密字符串为hahah 加密key为abc
+echo -n "haha" | openssl enc -aes-128-ecb -K 616263 -nosalt |base64
+
+// 加密结果
+MIoAu+xUEpQZSUmkZUW6JQ==
+
+
+echo -n 固定写法
+“hahaa” 加密的字符串
+| 分割符号（管道）
+openssl （加密的工具包）
+enc 加密
+-aes 加密算法
+
+-128 分组长度
+-ecb 分组模式
+-K 616263 加密key 616263 十六进制(abc)
+-nosalt (不加盐)
+|base64编码
+
+====================== aes-ecb 加密====================
+====================== aes-ecb 解密====================
+
+
+AES ecb 模式的解密命令行
+命令行解密
+echo -n "MIoAu+xUEpQZSUmkZUW6JQ==" |base64 -D |openssl enc -aes-128-ecb -K 616263 -nosalt -d
+
+解密结果
+haha
+====================== aes-ecb 解密====================
+
+
+
+
+

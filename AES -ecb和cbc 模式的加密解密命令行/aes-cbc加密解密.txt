@@ -1,0 +1,44 @@
+====================== aes-cbc 加密====================
+加密的前期准备：{haha 加密的字符串
+abc 加密的key
+//在oc中的加密的iv为二进制
+uint8_t iv[8] = {1,2,3,4,5,6,7,8};
+NSData *data = [[NSData alloc]initWithBytes:iv length:sizeof(iv)];
+
+// 加密的iv(在命令行中的是)
+iv = 0102030405060708
+}
+
+
+最终的命令行：{
+echo -n "haha" |openssl enc -aes-128-cbc -K 616263 -nosalt -iv 0102030405060708 |base64
+}
+
+
+解释：{
+echo -n 固定的格式
+| 管道
+openssl 工具包
+enc -aes-128-cbc  （加密 aes 中的cbc模式）
+-K 616263 -nosalt （加密key 不加盐模式）
+-iv 0102030405060708 (上面的iv[8])
+|base64 (加密后经过base64编码)
+
+E/wWqUTiw/E+1DThAzV39A== (加密后的密文（经过base64编码过得）)
+}
+====================== aes-cbc 加密====================
+
+====================== aes-cbc 解密====================
+解密的准备 :{
+aes cbc 解密命令行 iv 0102030405060708,机密key为abc (16进制的编码为616263)
+解密的密文为：E/wWqUTiw/E+1DThAzV39A==（被base64编码过的）
+}
+终端命令行:{
+echo -n "E/wWqUTiw/E+1DThAzV39A==" |base64 -D | openssl enc -aes-128-cbc -K 616263 -nosalt -iv 0102030405060708 -d
+}
+base64 -D (base64 解码)
+openssl （工具包）
+aes 
+
+haha （解密后的字符串）
+====================== aes-cbc 解密====================

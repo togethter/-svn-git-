@@ -1,0 +1,36 @@
+0、cd/...本地的路径
+1、svn checkout 仓库路径 --username=用户名 --password=密码
+2、检查仓库中文件状态 svn status(st)
+3、将本地的代码提交到远程仓库svn commit -m "注释" 文件名(可省略)
+4、查看版本信息 svn update , svn log
+5、冲突(原因|解决tc-mc-p)
+6、回到指定的版本 svn update -r版本号 || 回到指定的版本号
+7、取消当前的操作 svn revert || 修改没有提交
+8、修改已经提交 svn update -r()|merge
+svn 图形界面工具使用
+1.初始化仓库(直接提交到仓库中的时候提交显示忽略直接点击忽略操作,在远端的xcode项目中的userdata 删除掉，在提交，在本地的xcode代开随便修改本地项目修改就会出现这个userdata，在手动点击忽略操作，先更新在提交) 验证的话就就用souurceControll 验证就好了
+2.初始化忽略(userdata 在xcode删除掉在)
+
+svn 注意事项 xcode中使用静态库注意点(应该手动的把.a文件添加到SVN管理中，默认是被忽略的) 
+cd ... 
+ls -la （展开文件）
+svn status（查看svn的状态）
+svn add libRegex.a(添加静态库)
+
+
+
+
+
+
+SVN:{
+status - st
+commit -ci
+checkout - ci
+update - up
+remove -rm
+}
+
+
+
+
+

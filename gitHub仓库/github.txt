@@ -1,0 +1,7 @@
+1先fork复制一份目标仓库到个人账号
+2使用Xcode链接到个人仓库中的这份代码
+3通过clone或者Xcode下载下来
+4给框架添加方法或者是修改方法实现.commit并且push到共享版本库
+5创建合并请求,请求原作者合并你的分支pull request 请求 弄一个new pull request请
+
+github 下载有两种方式，https|| SSL

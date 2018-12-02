@@ -1,0 +1,15 @@
+cd /... (路径)
+ls -la(展开文件)
+
+// 生成base64 aciss
+base64 .... 
+// 生成
+base64 ....(123.png) -o ...(223.txt)
+
+base64 ....(223.txt) -o ...(445.png) -D
+
+
+// 对字符进行base64编码
+// 对编码后的字符串进行解码
+ echo -n "A" | base64 （对A base64 编码）
+ echo -n "QQ==" |base64 -D (对QQ== 进行base64解码)

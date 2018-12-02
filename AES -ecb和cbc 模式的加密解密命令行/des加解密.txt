@@ -1,0 +1,19 @@
+
+key abc 
+加密的字符串haha
+des ecb
+
+// 命令行
+echo -n "haha" |openssl enc -des-ecb -K 616263 -nosalt |base64
+
+//加密的字符串
+b2Z9CtPer5Y=
+
+
+
+// 解密的字符串
+echo -n "b2Z9CtPer5Y=" |base64 -D |openssl enc -des-ecb -K 616263 -nosalt -d
+
+
+// 解密的文字
+haha

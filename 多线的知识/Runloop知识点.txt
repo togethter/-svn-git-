@@ -1,0 +1,14 @@
+1概念 运行循环（死循环）
+2作用:
+	1保持程序的持续运行
+	2处理app的各种事件
+	3节省cpu资源，提升性能
+3runloop和线程
+关系：----对应（字典）
+主线程对应的runloop已经创建并且开启了，子线程对应的runloop需要手动创建并开启
+线程的销毁，那么对应的runloop销毁
+4runloop对象
+c，oc
+5相关类
+ruloop|mode|source|timer|observer
+runloop启动的时候需要选择一个运行模式，检查运行模式是否为空（是否有“source|timer”)如果为空那么直接退出，不为空则开启

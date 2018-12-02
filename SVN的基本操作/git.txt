@@ -1,0 +1,73 @@
+git具体的使用初始化本地仓库：{
+cd ....
+01（初始化本地仓库)
+git init
+02配置仓库用户名和邮箱
+git config user.name "manager"
+git config user.email "mananger,@126.com"
+3全局配置git仓库的用户名和邮箱(git仓库在操作的时候会先检查找当前仓库的用户名和邮箱如果没有那么在查找全局的用户名和邮箱)
+git config --global user.name "xiaomage"
+git config --global user.email "xiaomage"@126.com
+
+
+/*
+01首先创建Main.m文件
+touch Main.m
+02 查看版本库中文件的状态
+git status || 红色，那么说明该文件需要添加到git的暂缓区*
+03把新创建的文件添加到暂缓区
+git add Main.m
+04 查看版本库中文件的状态
+git status ||变成绿色:表示该文件已经被添加到暂缓区中
+05 把暂缓区中的更改提交到本地的版本库中
+git commit -m “新创建了文件” Main.m
+06 修改main.m文件 重新查看文件的状态
+echo “hello main” >main
+git status || 红色的，说明要做add操作
+07把文件的修改操作添加到暂缓区
+git add Main.m
+08把更改提交到本地的版本库
+git commit -m “修改了文件”Main.m
+09删除文件
+git rm 文件名
+10 查看版本的状态
+git status || 绿色删除了文件操作不需要添加到暂缓区
+git commit -m 把更改提交到本地仓库
+10 查看版本信息
+git log ||查看版本信息 SHA 版本号加密是40位的||
+git reflog|| 加强版本的信息(用这种方法来查看版本信息可以看到版本回退操作)
+11版本回退
+GIT版本回退的两种情况
+1.修改了内容,但是没有提交到版本库
+git reset --hard HEAD
+2.修改了内容，并也已经提交到版本库
+git reset --hard HEAD^
+git reset --hard 版本号 (通过版本号回到指定的版本)
+
+注意点：在svn中只有新创建的文件需要add操作，而在git中新创建文件或者是在修改了的文件都需要在做一次add操作
+
+
+
+git 工作原理
+01 git 版本库
+02除了git的所有的是工作区
+03暂缓区在git 里面有一个暂缓区 && 分支 && HEAD 指针（指向当前的分支）
+04 在工作区新创建的文件需要通过add添加到暂缓区中，再通过commit 将暂缓区的东西添加到当前的分支中
+
+
+*/
+
+}
+GIT:{
+在git中可以给任何的命名设置一个别名
+不能取中文
+git config alias.st "status"
+git config alias.state "status"
+git config alias.ci "commit -m"
+git add . 表示将所有的更改提交到暂缓区
+
+设置全局的别名
+git config --global alias.st "status"
+当前的工作区-暂缓区-本地的版本库-远程的版本库
+
+}

@@ -1,0 +1,12 @@
+Public-Key: (512 bit)
+Modulus:
+    00:c2:ef:0b:4f:18:6c:85:39:75:6a:43:4f:33:ad:
+    4b:4e:20:aa:1b:c5:63:29:23:26:c1:db:41:a4:68:
+    53:22:a6:c2:7e:e3:73:4e:0e:62:f8:bd:7e:c7:8b:
+    83:b3:e3:60:14:bb:d8:e2:a3:58:0c:9a:a6:fd:2c:
+    ec:66:13:b4:25
+Exponent: 65537 (0x10001)
+-----BEGIN PUBLIC KEY-----
+MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMLvC08YbIU5dWpDTzOtS04gqhvFYykj
+JsHbQaRoUyKmwn7jc04OYvi9fseLg7PjYBS72OKjWAyapv0s7GYTtCUCAwEAAQ==
+-----END PUBLIC KEY-----
