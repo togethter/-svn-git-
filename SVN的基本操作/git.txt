@@ -28,7 +28,7 @@ git status || 红色的，说明要做add操作
 git add Main.m
 08把更改提交到本地的版本库
 git commit -m “修改了文件”Main.m
-09删除文件
+09删除文件 （删除文件后不需要做add操作(添加到暂缓区)直接提交commit -m "修改的内容"）
 git rm 文件名
 10 查看版本的状态
 git status || 绿色删除了文件操作不需要添加到暂缓区
