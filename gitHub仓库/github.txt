@@ -5,3 +5,65 @@
 5创建合并请求,请求原作者合并你的分支pull request 请求 弄一个new pull request请
 
 github 下载有两种方式，https|| SSL
+
+tag 推送
+1、git查看tag命令：git tag
+2、创建Tag直接加入名字就好了，格式：git tag 名字 -m 注释
+这时只能在本地可以看到自己新建Tag，在远程中央仓库中还是看不到在Tags下有如何内容，因为我们还没把它推送到中央仓库上
+3、将本地Tag推送到远程Tag上
+命令：git push origin tag名（上面自己取得名字）
+4、删除远程Tag
+命令：git push origin --delete Tag名（上面自己取得名字）
+5、删除本地Tag
+上面删除远程Tag，但本地还存在
+删除本地Tag命令：git tag -d Tag名（上面自己取得名字）
+
+
+Branch（分支）推送
+1、查看branch分支
+命令：git branch
+*代表当前处于哪个分支下
+2、创建branch分支
+命令：git checkout -b branch分支名
+这是只能在本地看到自己新建的分支，而在远程仓库看不到自己新建的分支
+3、将本地branch分支推送到远程branch分支上
+命令：git push origin branch名
+4、branch分支切换
+分支切换命令：git checkout branch名
+5、删除远程branch分支
+命令：git push origin --delete branch名
+6、删除本地branch分支
+命令：git branch -d 分支名
+注意删除本地branch分支一定要在非删除分支上操作，否则会报错
+7、在对应branch分支上提交相关内容
+命令：git push --set-upstream origin branch名
+注意：要提交到哪个分支，一定要切换到对应的分支上
+8、将test1分支合并到master（主）分支上
+首先要切换到master（主）分支上，然后在进行合并
+合并命令：git merge 指定分支名
+这一步完之后还要推送到远程的仓库中，调用命令：git push
+合并完后如果有需要的话，就可以放心的删掉test1分支
+9、修改本地代码，然后在提交到远程仓库的步骤
+（1）先添加到暂存区      git add *
+（2）提交暂存区内容     git commit -m "自己注释"
+（3）更新远程仓库内容 git push origin master（这一步如果有冲突，先解决冲突，然后在从（1）步开始操作）
+（4）提交到远程仓库     git push
+
+
+已提交代码要回退到指定旧版本代码，并更改后的文件提交到主分支上
+应用场景：远程GitHub是 A -> B -> C -> D，你git reset --hard 之后是A -> B ，这时候除非远程那边抹掉C和D，否则是不能合并的。
+git reset --hard 和 git revert 都可以实现“代码回滚”，它们区别：
+git revert 会把本地变成A -> B -> C -> D -> E。其中，E 干的事儿是删除 C 和 D。这样做的好处在于，你 git push origin master 就不会有上面的报错了。但，历史线上还是会保留 C 和 D这两个 commit。如果使用这个命令，记得要 add 然后 commit。
+git reset --hard 会直接删除掉C和D，剩下就是A -> B，这样好处在于更直接更彻底；缺点在于要通过 git push origin master（指定的分支）--force去强行更改，这样带来结果是一旦你后悔了，除非根据本地的reflog直接恢复HEAD指针，此外没有其他办法。
+
+
+总结一下，要使用git reset --hard就需两步走：
+1、先用git reset --hard <指定版本>  
+2、再用git push origin master（指定的分支） --force 强制更改远程代码
+
+
+
+
+
+
+
