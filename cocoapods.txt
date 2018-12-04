@@ -1,0 +1,14 @@
+1首先升级gem(如果是最新的可以省略)(为什么?cocoapods 安装是使用gem命令的gem其实是ruby的,mac自带ruby ）
+sudo gem update --system
+2切换cocoapods的数据源
+gem source --remove .....
+gem source -a ....
+gem source -l
+3安装cocoapods (查看cocoapods版本 pod --version )
+sudo gem install cocoapods(安装cocoapods) 
+(如果10.11系统)sudo gem install -n /usr/local/bin cocoapods
+sudo gem uninstall cocoapods(卸载cocoapods)
+(如果10.11系统)sudo gem uninstall -n /usr/local/bin cocoapods
+5设置仓库
+pod setup (本质是下载仓库(托管在gitHub里面的)并设置仓库)
+6前往文件夹	~/.cocoapods 就能看到repos 里面的master(把master删掉 在gitHub 搜索cocoapods 找到cocoapods/Sepecs 下载下来将他该名字为master放到刚才的文件下在pod setup设置仓库)
