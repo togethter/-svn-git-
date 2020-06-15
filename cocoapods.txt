@@ -3,7 +3,8 @@ cocoapods 安装
 sudo gem update --system
 2切换cocoapods的数据源
 gem source --remove .....
-gem source -a ....
+gem source -a https://gems.ruby-china.com 
+
 gem source -l
 3安装cocoapods (查看cocoapods版本 pod --version )
 sudo gem install cocoapods(安装cocoapods) 
