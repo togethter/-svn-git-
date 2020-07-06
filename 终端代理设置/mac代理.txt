@@ -1,0 +1,27 @@
+设置Mac 终端走代理
+1.打开终端执行：
+export http_proxy=socks5://代理ip:端口
+export http_proxy=http://代理ip:端口
+export https_proxy=http://代理ip:端口
+
+这个只能在当前终端执行一次退出后就需要重新设置
+如果需要开机自动设置
+把上面的代码加到~/.bash_profile里
+保存到~/.bash_profile的操作步骤：
+创建.bash_profile
+1.启动终端
+2.进入当前用户的home目录
+cd ~ 或者  cd /users/YourMacUserName
+3.输入touch .bash_profile
+
+查看和编辑.bash_profile文件
+vim ~/.bash_profile，如果已经创建了,可以直接编辑该文件
+1.终端输入open -e .bash_profile
+2.编辑
+3.关闭保存
+最后更新配置的环境变量
+输入:source .bash_profile
+检验终端是否使用代理翻墙：
+使用curl命令监测是否返回数据：curl https://facebook.com
+
+
