@@ -63,7 +63,25 @@ git reset --hard 会直接删除掉C和D，剩下就是A -> B，这样好处在�
 
 
 
+本地仓库已经存在添加到远程仓库的办法
+git remote add origin**************
+fatal: remote origin already exists.（报错远程起源已经存在。）
 
+报错远程仓库已经存在，需要删除原先本地仓库已经存在的远程仓库
+1、先输入 git remote rm origin
+2、再输入 git remote add origin**************
+
+// 关联新的远程仓库
+git remote add origin******
+The authenticity of host 'github.com ' can't be established（无法建立主机“github.com”的真实性）
+
+如果跟你的github地址不一样，那就去你的github上复制一下仓库地址
+然后在终端中输入：
+git remote -v
+git remote set-url origin https://github.com/yourname/learngit.git (这个是你的复制的仓库地址)
+
+最后push
+git push origin master 
 
 
 
